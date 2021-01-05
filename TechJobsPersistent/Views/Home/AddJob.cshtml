@@ -7,14 +7,12 @@
         <label>Name</label>
         <input class="form-control" />
         <span></span>
-    </div>
-
-    <div class="form-group">
         <label asp-for="Id">Employers</label>
         <input class="form-control" />
-        <select asp-for="Id" asp-items="Model.Employers"></select>
-        <a asp-controller="Home" asp-action="AddEmployerViewModel" asp-route-id="@Model.Employers">Add additional employers</a>
+        <span></span>
+        <a asp-controller="Employer" asp-action="Add">Add additional employers</a>
     </div>
-
     <input type="submit" value="Add Job" />
 </form>
+
+

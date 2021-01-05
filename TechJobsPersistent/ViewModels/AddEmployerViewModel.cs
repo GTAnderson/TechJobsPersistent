@@ -8,14 +8,15 @@ namespace TechJobsPersistent.ViewModels
 {
     public class AddEmployerViewModel
     {
-        [Required]
+        [Required(ErrorMessage = "Name is required")]
         public string Name { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "Location is required")]
         public string Location { get; set; }
 
         public AddEmployerViewModel(string Name, string Location)
         {
+            AddEmployerViewModel addEmployerViewModel = new AddEmployerViewModel();
         }
 
         public AddEmployerViewModel()
