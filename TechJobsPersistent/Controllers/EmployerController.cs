@@ -33,20 +33,27 @@ namespace TechJobsPersistent.Controllers
             return View(addEmployerViewModel);
         }
 
-        public IActionResult ProcessAddEmployerForm()
+        [HttpPost]
+        public IActionResult ProcessAddEmployerForm(AddEmployerViewModel addEmployerViewModel)
         {
-            //Add appropriate code to process form submissions
-            //with only valid Employer objects saved to the database.
-            
+            if (ModelState.IsValid)
+            {
+                Employer newEmployer = new Employer
+                {
+                    Name = addEmployerViewModel.Name,
+                    Location = addEmployerViewModel.Location
+                };
+
+                context.Add(newEmployer);
+
+                //return Redirect("/Events")
+            }
             return View();
         }
 
         public IActionResult About(int id)
         {
-            //Currently returns a view with vital information about each employer
-            //such as their name and location.Make sure that the method is actually
-            //passing an Employer object to the view for display.
-            return View();
+            return View(context.Employers);
         }
     }
 }
