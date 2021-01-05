@@ -1,4 +1,6 @@
-﻿<h1>Add a Job</h1>
+﻿@model TechJobsPersistent.ViewModels.AddJobViewModel
+
+<h1>Add a Job</h1>
 
 <form asp-controller="Home" asp-action="ProcessAddJobForm" method="post">
     <div class="form-group">
@@ -7,18 +9,12 @@
         <span></span>
     </div>
 
-    @*Create the form field to add employer information to the job.
-        This field should be a dropdown menu with all of the employers in the database.
-        In addition, add a link to the <div> element to add new employers.
-        This way, if a user doesn’t see the employer they are looking for,
-        they can easily click on the link and add a new employer to the database.*@
-
     <div class="form-group">
-        <label>Name</label>
+        <label asp-for="Id">Employers</label>
         <input class="form-control" />
-        <span></span>
+        <select asp-for="Id" asp-items="Model.Employers"></select>
+        <a asp-controller="Home" asp-action="AddEmployerViewModel" asp-route-id="@Model.Employers">Add additional employers</a>
     </div>
 
     <input type="submit" value="Add Job" />
 </form>
-
