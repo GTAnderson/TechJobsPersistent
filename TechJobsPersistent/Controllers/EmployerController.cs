@@ -46,8 +46,6 @@ namespace TechJobsPersistent.Controllers
                 };
 
                 context.Add(newEmployer);
-
-                //return Redirect("/Events")
             }
             return View();
         }

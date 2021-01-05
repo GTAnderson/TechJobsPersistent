@@ -10,9 +10,15 @@
         <label asp-for="Id">Employers</label>
         <input class="form-control" />
         <span></span>
-        <a asp-controller="Employer" asp-action="Add">Add additional employers</a>
+
+        @*THIS IS WHERE I LOST THE PLOT!*@
+
+        <a asp-controller="Employer" asp-action="Add" method="post">Add additional employers</a>
+
     </div>
     <input type="submit" value="Add Job" />
 </form>
 
 
+
+<form asp-controller="Employer" asp-action="About" asp-route-id="Employer.id">
