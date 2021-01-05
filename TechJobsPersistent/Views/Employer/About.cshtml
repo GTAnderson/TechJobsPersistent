@@ -1,6 +1,12 @@
-﻿<h1>Employer: Name</h1>
+﻿@using TechJobsPersistent.ViewModels;
+@model List<TechJobsPersistent.Models.Employer>
 
-<div>
-    <p>Name: name</p>
-    <p>Location: location</p>
-</div>
+
+<h1>Employer: Name</h1>
+
+<form asp-controller="Employer" asp-action="About" asp-route-id="Employer.id">
+    <div>
+        <p>Name: name</p>
+        <p>Location: location</p>
+    </div>
+</form>
