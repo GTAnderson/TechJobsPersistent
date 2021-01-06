@@ -7,14 +7,23 @@
         <label>Name</label>
         <input class="form-control" />
         <span></span>
-        <label asp-for="Id">Employers</label>
-        <input class="form-control" />
-        <span></span>
-
-        @*THIS IS WHERE I LOST THE PLOT!*@
-
-        <a asp-controller="Employer" asp-action="Add" method="post">Add additional employers</a>
-
     </div>
+
+    <div class="form-group">
+        <label asp-for="Id">Employers</label>
+        <select id="id" name="name" value="addJobViewModel"></select>
+        <a asp-controller="Employer" asp-action="Add" method="post">Add New Employer</a>
+        <span></span>
+    </div>
+
+    @*<div class="form-group">
+        <label>Skills Required</label>
+        @foreach (var skill in @Model.Skills)
+        {
+            <input type="checkbox" name="selectedSkills" value="@skill.Name" />
+            <label>@skill.Name</label>
+            <a asp-controller="Skill" asp-action="Add">Add New Skill</a>}
+    </div>*@
+
     <input type="submit" value="Add Job" />
 </form>
