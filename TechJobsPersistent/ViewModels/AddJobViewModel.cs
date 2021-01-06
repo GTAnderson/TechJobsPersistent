@@ -13,6 +13,7 @@ namespace TechJobsPersistent.ViewModels
 
         public List<SelectListItem> AllEmployers { get; set; }
         public List<Skill> Skills { get; set; }   // need skills for the job
+        public Job ThisJob { get; set; }
 
         // is a job object necessary?
 

@@ -12,20 +12,26 @@
     <div class="form-group">
         <label asp-for="EmployersId">Employers</label>
         
-        <select class="form-control" asp-for="EmployersId" asp-items="Model.AllEmployers"></select>
+        <select class="form-control" asp-for="EmployersId" asp-items="@Model.AllEmployers"></select>
 
         <input type="submit" value="Add New Employer" />
         <span></span>
     </div>
 
-    @*<div class="form-group">
+    @*
+    <div class="form-group">
         <label>Skills Required</label>
         @foreach (var skill in @Model.Skills)
         {
             <input type="checkbox" name="selectedSkills" value="@skill.Name" />
             <label>@skill.Name</label>
             <a asp-controller="Skill" asp-action="Add">Add New Skill</a>}
-    </div>*@
+    </div>
+
+    THIS CODE BLOCK
+    CURRENTLY RETURNS NULLREFERENCEERROR
+    OBJECT INSTANCE NOT CREATED YET
+    *@
 
     <input type="submit" value="Add Job" />
 </form>
